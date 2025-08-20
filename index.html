@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-200 to-blue-400 min-h-screen flex flex-col items-center justify-start p-4">
+
+  <!-- Header -->
+  <header class="w-full text-center my-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">🌤️ Weather Forecast</h1>
+    <p class="text-sm md:text-base text-white mt-1">Get real-time weather updates</p>
+  </header>
+
+  <!-- Search Section -->
+  <section class="w-full max-w-md bg-white/90 rounded-2xl shadow-lg p-4">
+    <div class="flex gap-2">
+      <input 
+        id="cityInput" 
+        type="text" 
+        placeholder="Enter city name..."
+        class="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <button 
+        id="searchBtn" 
+        class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+      >
+        Search
+      </button>
+    </div>
+    <div id="errorBox" class="text-red-600 text-sm mt-2 hidden"></div>
+  </section>
+
+  <!-- Weather Display Section -->
+  <section id="weatherDisplay" class="w-full max-w-5xl mt-6 grid gap-4">
+    <!-- Weather info & forecast will be injected here -->
+  </section>
+
+  <!-- Recently Searched Dropdown -->
+  <section class="w-full max-w-md mt-6">
+    <label class="block text-white font-semibold mb-2">Recently searched:</label>
+    <select id="recentCities" class="w-full p-2 rounded-lg border border-gray-300">
+      <option value="">-- Select city --</option>
+    </select>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

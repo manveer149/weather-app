@@ -1,0 +1,41 @@
+/* Basic fonts */
+body { font-family: 'Poppins', sans-serif; }
+
+/* Background styles */
+.bg-sunny {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(255,225,130,.6), transparent),
+              radial-gradient(1200px 600px at 110% 10%, rgba(255,170,70,.35), transparent),
+              linear-gradient(180deg, #fff7e6, #ffe3b3 40%, #ffd08a 100%);
+}
+.bg-cloudy {
+  background: linear-gradient(180deg, #e8edf3, #cfd7e3 60%, #b9c3d1);
+}
+.bg-rainy {
+  background: linear-gradient(180deg,#dfefff,#b9d8ff);
+  overflow: hidden;
+}
+.bg-rainy::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,.55) 2px, transparent 2px);
+  background-size: 18px 18px; opacity:.4; animation: rain 1.2s linear infinite;
+}
+@keyframes rain { to { background-position: 0 18px; } }
+
+/* Glass card */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.55));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Toast animation (simple) */
+.toast-enter { transform: translateY(8px); opacity:0; }
+.toast-enter-active { transform: translateY(0); opacity:1; transition: all .25s ease; }
+.toast-exit { opacity:1; }
+.toast-exit-active { opacity:0; transition: opacity .2s ease; }
+
+/* Small responsive tweaks */
+@media (max-width: 640px) {
+  .text-5xl { font-size: 2.5rem; }
+}
